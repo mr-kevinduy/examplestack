@@ -1,14 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 
 const Login = () => {
   const [email, setEmail] = useState('')
 
-  const submitForm = async event => {
-    event.preventDefault()
+  const submitForm = async (event: FormEvent<HTMLFormElement>) => {
+    // event.preventDefault()
   }
 
 	return (
@@ -22,7 +22,7 @@ const Login = () => {
             name="email"
             value={email}
             className="block mt-1 w-full"
-            onChange={event => setEmail(event.target.value)}
+            onChange={(event: FormEvent<HTMLInputElement> ) => setEmail(event.currentTarget.value)}
             required
             autoFocus
           />
